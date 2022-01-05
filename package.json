@@ -1,0 +1,23 @@
+{
+  "name": "soul_studio",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.5",
+    "mongoose-autopopulate": "^0.16.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
