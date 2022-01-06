@@ -1,4 +1,5 @@
-// const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
+const { errorFormatter } = require('../validators/common.validator');
 const productService = require('../service/product.service');
 const {
   responseSuccess,
@@ -8,6 +9,8 @@ const {
 
 const createProduct = async (req, res) => {
   try {
+    validationResult(req).formatWith(errorFormatter).throw();
+
     const data = await productService.createProduct(req.body);
     return responseSuccess(res, { data }, ResponseCode.SUCCESS_CREATED);
   } catch (ex) {
@@ -21,6 +24,8 @@ const createProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   try {
+    validationResult(req).formatWith(errorFormatter).throw();
+
     const data = await productService.updateProduct(
       req.params.product_id,
       req.body

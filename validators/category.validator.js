@@ -12,8 +12,8 @@ const validateCreateCategory = () => {
     },
     parent: {
       optional: { options: { nullable: false } },
-      isArray: {
-        errorMessage: 'Must be an array',
+      isMongoId: {
+        errorMessage: 'Invalid parent category id',
       },
     },
   });
